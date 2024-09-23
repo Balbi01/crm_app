@@ -1,7 +1,7 @@
 <template>
-    <div class="h-screen">
+    <div class="flex h-full w-full">
         <SideBarComponent/>
-
+        <BasePageComponent/>
     </div>
     <!-- <h1>Hello World!</h1> -->
     <!-- <nav>
@@ -18,10 +18,12 @@
 
 <script>
 import SideBarComponent from "./SidebarComponent.vue";
+import BasePageComponent from "./BasePageComponent.vue";
 
 const AppComponent = {
     components: {
-        SideBarComponent
+        SideBarComponent,
+        BasePageComponent
     }
 }
 
