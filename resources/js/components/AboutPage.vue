@@ -1,4 +1,5 @@
 <template>
-    <h1>AboutPage
+    <h1>
+        Descubriendo como funciona esto
     </h1>
 </template>
