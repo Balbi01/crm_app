@@ -1,21 +1,17 @@
 <template>
     <Head title="CRM Dashboard" />
 
-    <div class="flex h-full w-full">
-        <SideBarComponent/>
-        <BasePageComponent/>
-    </div>
-    <!-- <h1>Hello World!</h1> -->
-    <!-- <nav>
-        <div> -->
-            <!-- <router-link to="/">Home</router-link>
-            <router-link to="/about">About</router-link> -->
+    <div class="flex h-screen w-screen">
+        <div class="h-full w-1/5">
+         <SideBarComponent/>
 
-        <!-- </div>
-    </nav> -->
-    <!-- <main>
-        <router-view/>
-    </main> -->
+        </div>
+        <div class="h-full w-4/5">
+        <BasePageComponent/>
+
+        </div>
+    </div>
+    
 </template>
 
 <script setup>

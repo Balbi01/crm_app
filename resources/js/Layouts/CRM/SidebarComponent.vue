@@ -1,7 +1,7 @@
 <template>
-    <div class="h-max">
-        <div class="flex">    
-            <div class="flex flex-wrap flex-col justify-between w-64 h-screen">
+    <div class="h-full">
+        <div class="flex h-full w-full">    
+            <div class="flex flex-wrap flex-col justify-between w-full h-full">
                 <div class="flex flex-col">
                     <!-- Icono y titulo -->
                     <div id="title" class="
