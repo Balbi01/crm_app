@@ -26,7 +26,7 @@
                     </div>
 
                     <!-- Buscador -->
-                    <div class="input input-bordered flex m-2 mt-6 items-center gap-2">
+                    <div class="input flex m-2 mt-6 items-center gap-2">
                         <input type="text" class="grow" placeholder="Buscar" />
                     </div>
 
@@ -108,14 +108,14 @@
                     <ul class="flex menu rounded-box w-full">
                         <li class="flex font-bold">
                             <div class="flex h-12 items-center">
-                                <a class="align-middle">Ajustes</a>
+                                <a class="align-middle">Personalización</a>
                             </div>
                         </li>
-                        <li class="flex font-bold">
+                        <!-- <li class="flex font-bold">
                             <div class="flex h-12 items-center">
                                 <a class="align-middle text-red-500">Cerrar Sesión</a>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
