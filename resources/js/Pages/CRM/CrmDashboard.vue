@@ -1,4 +1,6 @@
 <template>
+    <Head title="CRM Dashboard" />
+
     <div class="flex h-full w-full">
         <SideBarComponent/>
         <BasePageComponent/>
@@ -16,16 +18,9 @@
     </main> -->
 </template>
 
-<script>
-import SideBarComponent from "./SidebarComponent.vue";
-import BasePageComponent from "./BasePageComponent.vue";
+<script setup>
+import SideBarComponent from '@/Layouts/CRM/SidebarComponent.vue';
+import BasePageComponent from '@/Layouts/CRM/BasePageComponent.vue';
+import { Head } from '@inertiajs/vue3';
 
-const AppComponent = {
-    components: {
-        SideBarComponent,
-        BasePageComponent
-    }
-}
-
-export default AppComponent;
 </script>

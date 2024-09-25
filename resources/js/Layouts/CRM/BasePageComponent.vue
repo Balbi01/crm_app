@@ -30,10 +30,5 @@
 
 </template>
 
-<script>
-const BasePageComponent = {
-
-}
-
-export default BasePageComponent;
+<script setup>
 </script>
