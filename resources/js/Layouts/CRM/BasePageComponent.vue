@@ -58,8 +58,14 @@
                 
             </div>
 
-            <div class="flex basis-5/6 rounded-lg bg-scampi-200">
-                
+            <div class="flex flex-col basis-5/6 rounded-lg bg-scampi-200 w-full">
+                <div class="h-full">
+                    <div>
+                        <p class="text-xl p-4 ml-4 text-gray-800 font-semibold">Listado de Usuarios</p>
+                    </div>
+                    <MainTableDisplay/>
+                </div>
+                                 
             </div>
         </div>
     </div>
@@ -68,5 +74,6 @@
 
 <script setup>
 import DropdownLink from '@/Components/DropdownLink.vue';
+import MainTableDisplay from '@/Layouts/TableComponents/MainTableDisplay.vue';
 
 </script>
