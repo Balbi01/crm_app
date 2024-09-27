@@ -6,8 +6,8 @@
             <div id="header" class="flex basis-1/6 w-full justify-between">
                 <div class="flex flex-row justify-between w-full">
                     <div class="flex flex-col w-5/6">
-                        <div class="input flex w-1/4 gap-2 my-6">
-                            <input type="text" class="grow" placeholder="Componentes" />
+                        <div class="flex w-1/4 gap-2 my-6">
+                            <input type="text" class="input input-bordered w-full" placeholder="Componentes" />
                         </div>
 
                         <div id="mainButtons" class="flex flex-row flex-1">
@@ -85,11 +85,13 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 
 import MainTableDisplay from '@/Layouts/TableComponents/MainTableDisplay.vue';
 import UserTable from '@/Layouts/SystemComponents/Users/UserTable.vue';
+import UserForm from '../SystemComponents/Users/UserForm.vue';
 
 // Mapa de componentes disponibles
 const componentMap = {
     UserTable,
-    MainTableDisplay
+    MainTableDisplay,
+    UserForm
 };
 
 const componentStore = useComponentStore();
