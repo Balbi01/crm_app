@@ -58,12 +58,18 @@
                 
             </div>
 
-            <div class="flex flex-col basis-5/6 rounded-lg bg-scampi-200 w-full">
+            <div class="flex flex-col basis-5/6 w-full h-full">
                 <div class="h-full">
-                    <div>
-                        <p class="text-xl p-4 ml-4 text-gray-800 font-semibold">Listado de Usuarios</p>
+                    <div class="h-full">
+                        <!-- <UserTable /> -->
+                        <component :is="resolvedComponent" />
                     </div>
-                    <MainTableDisplay/>
+                    <!-- <MainTableDisplay> -->
+                    <!-- <template>
+                        <component :is="resolvedComponent" />
+                        <UserTable />
+                        
+                    </template> -->
                 </div>
                                  
             </div>
@@ -73,7 +79,25 @@
 </template>
 
 <script setup>
+import { useComponentStore } from '@/store';
+import { computed } from 'vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
+
 import MainTableDisplay from '@/Layouts/TableComponents/MainTableDisplay.vue';
+import UserTable from '@/Layouts/SystemComponents/Users/UserTable.vue';
+
+// Mapa de componentes disponibles
+const componentMap = {
+    UserTable,
+    MainTableDisplay
+};
+
+const componentStore = useComponentStore();
+
+// Computed que resuelve el componente dinámico
+const resolvedComponent = computed(() => {
+    // Fallback si no se encuentra el componente
+    return componentMap[componentStore.currentComponent] || MainTableDisplay;
+});
 
 </script>

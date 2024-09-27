@@ -3,11 +3,10 @@
 
     <div class="flex h-screen w-screen">
         <div class="h-full w-1/5">
-         <SideBarComponent/>
-
+             <SideBarComponent/>
         </div>
         <div class="h-full w-4/5">
-        <BasePageComponent/>
+            <BasePageComponent/>
 
         </div>
     </div>
