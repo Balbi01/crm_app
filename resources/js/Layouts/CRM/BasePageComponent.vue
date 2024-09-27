@@ -83,7 +83,7 @@ import { useComponentStore } from '@/store';
 import { computed } from 'vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 
-import MainTableDisplay from '@/Layouts/TableComponents/MainTableDisplay.vue';
+import MainTableDisplay from '@/Layouts/TableComponents/TableHeaderTitle.vue';
 import UserTable from '@/Layouts/SystemComponents/Users/UserTable.vue';
 import UserForm from '../SystemComponents/Users/UserForm.vue';
 

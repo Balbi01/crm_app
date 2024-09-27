@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory} from "vue-router";
 
-import MainTableDisplay from "./Layouts/TableComponents/MainTableDisplay.vue";
+import MainTableDisplay from "./Layouts/TableComponents/TableHeaderTitle.vue";
 import UserTable from "./Layouts/SystemComponents/Users/UserTable.vue";
 
 // Define las rutas de la aplicación
