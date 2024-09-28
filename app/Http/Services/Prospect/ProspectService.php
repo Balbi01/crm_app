@@ -18,4 +18,9 @@ class ProspectService
         // Inyección de dependencias
         $this->prospectRepository = $prospectRepositoryInstance;
     }
+
+    public function index()
+    {
+        return $this->prospectRepository->index();
+    }
 }

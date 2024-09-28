@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Prospect;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Services\Prospect\ProspectService;
 
@@ -27,5 +28,14 @@ class ProspectController extends Controller
         // Inyección de dependencias
         $this->prospectService = $prospectServiceInstance;
         $this->request = $requestInstance;
+    }
+
+    /**
+     * Método encargado de regresar el índice de prospectos.
+     */
+    public function index(Request $request)
+    {
+        // Llamada al método index del servicio de prospectos
+        return $this->prospectService->index();
     }
 }

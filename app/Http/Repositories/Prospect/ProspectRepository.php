@@ -17,4 +17,9 @@ class ProspectRepository
     ) {
         $this->prospectModel = $prospectModelInstance;
     }
+
+    public function index()
+    {
+        return $this->prospectModel->all();
+    }
 }

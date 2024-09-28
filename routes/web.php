@@ -1,11 +1,14 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Prospect\ProspectController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Mail\BalwareMailable;
 use Illuminate\Support\Facades\Mail;
+
+// require __DIR__ . '/prospects_routes.php';
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -39,5 +42,10 @@ Route::get('/mailTest', function () {
     Mail::to('omar.ibanez343@gmail.com')->send($mail);
     return 'Mail sent';
 });
+
+Route::get('/prospects/index', [
+    ProspectController::class,
+    'index'
+]);
 
 require __DIR__ . '/auth.php';
