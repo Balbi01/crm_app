@@ -9,15 +9,16 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Método encargado de llamar a los seeders de la aplicación,
+     * que a su vez se encargan de poblar la base de datos mediante las factorías.
+     *
+     * @return void
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $this->call([
+            UserSeeder::class,
+            ProspectSeeder::class
         ]);
     }
 }
