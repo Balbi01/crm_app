@@ -86,12 +86,16 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 import MainTableDisplay from '@/Layouts/TableComponents/TableHeaderTitle.vue';
 import UserTable from '@/Layouts/SystemComponents/Users/UserTable.vue';
 import UserForm from '../SystemComponents/Users/UserForm.vue';
+import ProspectTable from '../SystemComponents/Prospects/ProspectTable.vue';
+import ProspectForm from '../SystemComponents/Prospects/ProspectForm.vue';
 
 // Mapa de componentes disponibles
 const componentMap = {
     UserTable,
     MainTableDisplay,
-    UserForm
+    UserForm,
+    ProspectTable,
+    ProspectForm
 };
 
 const componentStore = useComponentStore();

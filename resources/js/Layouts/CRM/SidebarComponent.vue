@@ -47,13 +47,9 @@
 
                             <!-- Botón prospectos -->
                             <li class="flex font-bold">
-                                <div class="flex h-12 items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
-                                        <path fill="currentColor" d="M8 8h2v4H8zm0 6h2v4H8zm6-6h2v4h-2zm0 6h2v4h-2zm-6 6h2v4H8zm6 0h2v4h-2z"/>
-                                        <path fill="currentColor" d="M30 14a2 2 0 0 0-2-2h-6V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v26h28ZM4 4h16v24H4Zm18 24V14h6v14Z"/>
-                                    </svg>
-                                    <!-- <a class="align-middle">Prospectos</a> -->
-                                    <button class="align-middle" @click="setComponent('UserForm')">Prospectos</button>
+                                <div class="flex h-12 items-center" @click="setComponent('ProspectTable')">
+                                    <ProspectsIcon width="20" height="20"/>
+                                    <button class="align-middle">Prospectos</button>
 
                                 </div>
                             </li>
@@ -93,10 +89,9 @@
                                 </div>
                             </li>
                             <li class="flex font-bold">
-                                <div class="flex h-12 items-center">
-                                    
+                                <div class="flex h-12 items-center" @click="setComponent('UserTable')">   
                                     <UsersIcon width="20" height="20"/>
-                                    <button class="align-middle" @click="setComponent('UserTable')">Usuarios</button>
+                                    <button class="align-middle">Usuarios</button>
                                 </div>
                             </li>
                         </ul>
@@ -126,6 +121,7 @@
 <script setup>
 import { useComponentStore } from '@/store';
 import UsersIcon from '../SystemComponents/Icons/UsersIcon.vue';
+import ProspectsIcon from '../SystemComponents/Icons/ProspectsIcon.vue';
 
 const componentStore = useComponentStore();
 
