@@ -16,11 +16,16 @@ class ProspectController extends Controller
     /** @var ProspectService */
     protected $prospectService;
 
+    /** @var Request */
+    protected $request;
+
     /** Método constructor de la clase */
     public function __construct(
-        ProspectService $prospectServiceInstance
+        ProspectService $prospectServiceInstance,
+        Request $requestInstance
     ) {
         // Inyección de dependencias
         $this->prospectService = $prospectServiceInstance;
+        $this->request = $requestInstance;
     }
 }
