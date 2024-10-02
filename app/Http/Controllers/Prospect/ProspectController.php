@@ -38,4 +38,15 @@ class ProspectController extends Controller
         // Llamada al método index del servicio de prospectos
         return $this->prospectService->index();
     }
+
+    /**
+     * Método que recibe la solicitud de creación de un nuevo prospecto.
+     * @param Request $request
+     * @return array
+     */
+    public function createProspect(Request $request)
+    {
+        $prospectData = $request->all();
+        return $this->prospectService->createProspect($prospectData);
+    }
 }

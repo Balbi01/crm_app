@@ -18,6 +18,7 @@ class ProspectFactory extends Factory
     public function definition(): array
     {
         return [
+            'code' => $this->faker->unique()->regexify('[A-Z0-9]{10}'),
             'legal_name' => $this->faker->name(),
             'business_name' => $this->faker->company(),
             'rfc' => $this->faker->regexify('[A-Z]{4}[0-9]{6}[A-Z0-9]{3}'),

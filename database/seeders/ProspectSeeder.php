@@ -18,16 +18,6 @@ class ProspectSeeder extends Seeder
      */
     public function run(): void
     {
-        $prospect = new Prospect();
-
-        $prospect->legal_name = 'Juan Rulfo';
-        $prospect->business_name = 'Juan Rulfo Libros';
-        $prospect->email = 'juan.rulfo@mail.com';
-        $prospect->rfc = 'RULJU123098';
-        $prospect->phone = '1234567890';
-
-        $prospect->save();
-
         Prospect::factory(10)->create();
     }
 }

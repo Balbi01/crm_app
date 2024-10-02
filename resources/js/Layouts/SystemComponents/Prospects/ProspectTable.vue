@@ -26,37 +26,30 @@
 
         <div class="p-4 mx-4 bg-white rounded-lg">
             <table class="table h-full">
+                
             <!-- head -->
                 <thead>
                     <tr>
-                        <th></th>
+                        <th>Código</th>
                         <th>Nombre</th>
-                        <th>Correo</th>
+                        <th>Apellido</th>
                         <th>RFC</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
                     </tr>
                 </thead>
+
+
                 <tbody class="h-full">
                     <!-- row 1 -->
-                    <tr>
-                        <th>1</th>
-                        <td>USUARIOS TEST</td>
-                        <td>cy_g@mail.com</td>
-                        <td>XXOXOXX123</td>
-                    </tr>
-                    <!-- row 2 -->
-                    <tr>
-                        <th>2</th>
-                        <td>Marie-ann Duffield</td>
-                        <td>example@mail.com</td>
-                        <td>XXOXOXX123</td>
-                            
-                    </tr>
-                    <!-- row 3 -->
-                    <tr>
-                        <th>3</th>
-                        <td>Marie-sin McDuffield</td>
-                        <td>marie@mail.com</td>
-                        <td>IACO00120712N</td>
+                    <tr v-for="prospect in tableData">
+                        <td>{{ prospect.code }}</td>
+                        <td>{{ prospect.legal_name }}</td>
+                        <td>{{ prospect.business_name }}</td>
+                        <td>{{ prospect.rfc }}</td>
+                        <td>{{ prospect.email }}</td>
+                        <td>{{ prospect.phone }}</td>
+
                     </tr>
                 </tbody>
             </table>
@@ -67,24 +60,39 @@
 </template>
 
 <script setup>
-
-// Componentes
-import TableHeaderTitle from '@/Layouts/TableComponents/TableHeaderTitle.vue';
-
-// Iconos
-import UsersIcon from '../Icons/UsersIcon.vue';
-import PlusIcon from '../Icons/PlusIcon.vue';
+// Importa el store
+import { useProspectStore } from '@/PiniaStores/prospectStore';
+import { computed, onMounted } from 'vue';
 
 // Importa el store para manipular el contenido
 import { useComponentStore } from '@/store';
 import ProspectsIcon from '../Icons/ProspectsIcon.vue';
 
+import TableHeaderTitle from '@/Layouts/TableComponents/TableHeaderTitle.vue';
+
+// Iconos
+import PlusIcon from '../Icons/PlusIcon.vue';
+
+
+// Generar la instancia del Store de prospectos
+const prospectStore = useProspectStore();
+
 // Generar la instancia del Store de componentes
 const componentStore = useComponentStore();
 
-// Cambia el componente actual en el store
+// Store para intercambiar el componente de tabla a formulario
 function setComponent(componentName) {
     componentStore.setComponent(componentName);
 }
+
+const tableData = computed(() => {
+    return prospectStore.prospectList;
+});
+
+// Cuando el componente se carga, llama a la función para obtener la lista de prospectos.
+onMounted(() => {
+    prospectStore.getProspectList();
+});
+
 
 </script>

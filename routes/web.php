@@ -43,9 +43,17 @@ Route::get('/mailTest', function () {
     return 'Mail sent';
 });
 
+// Carga de tabla principal de prospectos.
 Route::get('/prospects/index', [
     ProspectController::class,
     'index'
-]);
+])->name('prospectsIndex');
+
+// Creación de un nuevo prospecto.
+Route::post('prospects/create', [
+    ProspectController::class,
+    'createProspect'
+])->name('createProspect');
+
 
 require __DIR__ . '/auth.php';
