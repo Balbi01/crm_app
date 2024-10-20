@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-col bg-scampi-100 rounded-xl">
-        <div class="p-4 m-4 bg-white rounded-lg">
+    <div class="flex flex-col h-full max-h-full bg-scampi-100 rounded-xl overflow-hidden">
+        <div class="flex p-4 m-4 bg-white rounded-lg">
             <div class="flex flex-row items-center">
                 <p class="flex flex-row items-center">
                     <button class="btn btn-square btn-ghost cursor-pointer btn-sm">
@@ -12,50 +12,51 @@
                 />
             </div>
             <div class="flex flex-row">
-                <div class="mt-4">
-                    <button
-                        @click="setComponent('ProspectForm')" 
-                        class="btn btn-outline btn-neutral btn-sm items-center">
-                        <PlusIcon width="12" height="12"/>
-                        Nuevo Prospecto
-                    </button>
-                </div>
+                <button
+                    @click="setComponent('ProspectForm')"
+                    class="btn btn-outline btn-neutral btn-sm items-center">
+                    <PlusIcon width="12" height="12"/>
+                    Nuevo Prospecto
+                </button>
             </div>
-            
+
         </div>
 
-        <div class="p-4 mx-4 bg-white ">
-            <table class="table h-full overflow-y-auto">
-                
-            <!-- head -->
-                <thead>
-                    <tr>
-                        <th>Código</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>RFC</th>
-                        <th>Correo</th>
-                        <th>Teléfono</th>
-                    </tr>
-                </thead>
+        <div class="flex flex-col h-full p-4 mb-4 mx-4 bg-white rounded-lg overflow-auto">
+            <div>
+                Paginación
+            </div>
+
+            <div class="">
+                <table class="table table-auto h-full">
+                    <thead>
+                        <tr>
+                            <th class="min-w-[150px]">Código</th>
+                            <th class="min-w-[150px]">Nombre</th>
+                            <th class="min-w-[150px]">Apellido</th>
+                            <th class="min-w-[150px]">RFC</th>
+                            <th class="min-w-[150px]">Correo</th>
+                            <th class="min-w-[150px]">Teléfono</th>
+                        </tr>
+                    </thead>
 
 
-                <tbody class="h-full">
-                    <!-- row 1 -->
-                    <tr v-for="prospect in tableData">
-                        <td>{{ prospect.code }}</td>
-                        <td>{{ prospect.legal_name }}</td>
-                        <td>{{ prospect.business_name }}</td>
-                        <td>{{ prospect.rfc }}</td>
-                        <td>{{ prospect.email }}</td>
-                        <td>{{ prospect.phone }}</td>
-
-                    </tr>
-                </tbody>
-            </table>
+                    <tbody class="h-full">
+                        <!-- row 1 -->
+                        <tr v-for="prospect in tableData">
+                            <td>{{ prospect.code }}</td>
+                            <td>{{ prospect.legal_name }}</td>
+                            <td>{{ prospect.business_name }}</td>
+                            <td>{{ prospect.rfc }}</td>
+                            <td>{{ prospect.email }}</td>
+                            <td>{{ prospect.phone }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-    
+
 
 </template>
 
