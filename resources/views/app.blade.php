@@ -9,6 +9,7 @@
 
     {{-- Tema Light de DaisyUI --}}
     <html data-theme="light">
+    {{-- <html data-theme=""> --}}
 
     </html>
 

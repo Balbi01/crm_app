@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col w-full h-full bg-scampi-100 rounded-xl">
+    <div class="flex flex-col bg-scampi-100 rounded-xl">
         <div class="p-4 m-4 bg-white rounded-lg">
             <div class="flex flex-row items-center">
                 <p class="flex flex-row items-center">
@@ -24,8 +24,8 @@
             
         </div>
 
-        <div class="p-4 mx-4 bg-white rounded-lg">
-            <table class="table h-full">
+        <div class="p-4 mx-4 bg-white ">
+            <table class="table h-full overflow-y-auto">
                 
             <!-- head -->
                 <thead>

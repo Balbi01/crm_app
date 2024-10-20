@@ -3,7 +3,7 @@ import { ref } from "vue";
 
 export const useComponentStore = defineStore('component', {
     state: () => ({
-        currentComponent: ref('UserTable'),
+        currentComponent: ref('ProspectTable'),
     }),
     actions: {
         setComponent(componentName = 'UserTable') {

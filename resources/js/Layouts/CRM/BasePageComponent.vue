@@ -1,10 +1,10 @@
 <template>
     <div id="mainSpaComponent" class="flex h-full w-full">
-        <div class="flex flex-col h-screen w-full">
+        <div class="flex flex-col h-full w-full">
 
             <!-- Header de la vista principal -->
             <div id="header" class="flex basis-1/6 w-full justify-between">
-                <div class="flex flex-row justify-between w-full">
+                <div class="flex flex-row justify-between flex-1">
                     <div class="flex flex-col w-5/6">
                         <div class="flex w-1/4 gap-2 my-6">
                             <input type="text" class="input input-bordered w-full" placeholder="Componentes" />
@@ -22,11 +22,7 @@
                     </div>
 
                     <div class="flex flex-row w-1/6">
-                        <div class="flex flex-row justify-center w-full">
-                            <!-- <button class="btn btn-outline mx-2 btn-neutral">
-                                {{ $page.props.auth.user.name }}
-                                
-                            </button> -->
+                        <div class="flex flex-row justify-end w-full">
                             <details class="dropdown">
                                 <summary class="btn m-1">
                                     {{ $page.props.auth.user.name }}
@@ -46,32 +42,18 @@
                                                 </div>
                                             </DropdownLink>
                                         </li>
-                                        
-                                        
+
+
                                     </ul>
                             </details>
                         </div>
                     </div>
 
                 </div>
-                
-                
             </div>
 
-            <div class="flex flex-col basis-5/6 w-full h-full">
-                <div class="h-full">
-                    <div class="h-full">
-                        <!-- <UserTable /> -->
-                        <component :is="resolvedComponent" />
-                    </div>
-                    <!-- <MainTableDisplay> -->
-                    <!-- <template>
-                        <component :is="resolvedComponent" />
-                        <UserTable />
-                        
-                    </template> -->
-                </div>
-                                 
+            <div class="flex basis-5/6 w-full p-2">
+                <component :is="resolvedComponent" />
             </div>
         </div>
     </div>
