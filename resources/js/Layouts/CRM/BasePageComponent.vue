@@ -52,8 +52,8 @@
                 </div>
             </div>
 
-            <div class="flex basis-5/6 w-full p-2">
-                <component :is="resolvedComponent" />
+            <div class="flex basis-5/6 w-full p-2 overflow-auto">
+                <component :is="resolvedComponent" class="h-full w-full"/>
             </div>
         </div>
     </div>
