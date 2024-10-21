@@ -1,6 +1,7 @@
 <template>
     <div class="flex flex-col h-full max-h-full bg-scampi-100 rounded-xl overflow-hidden">
-        <div class="flex p-4 m-4 bg-white rounded-lg">
+        <div class="flex p-4 m-4 bg-white rounded-lg justify-between">
+
             <div class="flex flex-row items-center">
                 <p class="flex flex-row items-center">
                     <button class="btn btn-square btn-ghost cursor-pointer btn-sm">
@@ -27,10 +28,11 @@
                 Paginación
             </div>
 
-            <div class="">
-                <table class="table table-auto h-full">
+            <div class="overflow-x-auto">
+                <table class="table table-auto">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th class="min-w-[150px]">Código</th>
                             <th class="min-w-[150px]">Nombre</th>
                             <th class="min-w-[150px]">Apellido</th>
@@ -40,10 +42,9 @@
                         </tr>
                     </thead>
 
-
-                    <tbody class="h-full">
-                        <!-- row 1 -->
+                    <tbody>
                         <tr v-for="prospect in tableData">
+                            <td>{{ prospect.id }}</td>
                             <td>{{ prospect.code }}</td>
                             <td>{{ prospect.legal_name }}</td>
                             <td>{{ prospect.business_name }}</td>

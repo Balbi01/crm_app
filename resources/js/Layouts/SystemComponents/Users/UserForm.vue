@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col w-full h-full bg-scampi-100 rounded-xl">
+    <form @submit.prevent="submitUserForm" class="flex flex-col w-full h-full bg-scampi-100 rounded-xl">
         <div class="p-4 m-4 w-1/2 bg-white rounded-lg">
             <div>
                 <p class="flex items-center">
@@ -41,7 +41,7 @@
                     <TextInput
                         id="motherLastName" 
                         type="text" 
-                        v-model="userForm.second_last_name"
+                        v-model="userForm.mother_last_name"
                         required
                         placeholder="Apellido Materno"
                     />
@@ -64,11 +64,21 @@
                         :input-type="'password'"
                     />
                 </div>
+                <div class="flex gap-2 my-6">
+                    <TextInput
+                        id="password_confirmation" 
+                        v-model="userForm.password_confirmation"
+                        required
+                        placeholder="Confirmar Contraseña"
+                        :input-type="'password'"
+                    />
+                </div>
                 <div class="flex flex-row justify-end">
                     <div class="mt-4">
                         <button 
+                            
                             class="btn btn-primary btn-outline items-center">
-                            Guardar
+                            Mostrar Alerta
                         </button>
                     </div>
                     
@@ -76,8 +86,7 @@
             </div>
             
         </div>
-    </div>
-
+    </form>
 </template>
 
 <script setup>
@@ -85,7 +94,7 @@
 // Íconos
 import { useForm } from '@inertiajs/vue3';
 import ArrowBackIcon from '../Icons/ArrowBackIcon.vue';
-import SaveIcon from '../Icons/SaveIcon.vue';
+import AlertComponent from '../AlertComponent.vue';
 
 import { useComponentStore } from '@/store';
 import TextInput from '@/Components/TextInput.vue';
@@ -100,9 +109,10 @@ function setComponent(componentName) {
 const userForm = useForm({
     name: '',
     last_name: '',
-    second_last_name: '',
+    mother_last_name: '',
     email: '',
     password: '',
+    password_confirmation: ''
 });
 
 // Guardado del usuario
@@ -113,7 +123,8 @@ const submitUserForm = () => {
             'last_name',
             'second_last_name',
             'email',
-            'password'
+            'password',
+            'password_confirmation'
         )
     });
 }

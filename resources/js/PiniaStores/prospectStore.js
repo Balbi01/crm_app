@@ -28,7 +28,7 @@ export const useProspectStore = defineStore('prospect', {
                 const response = await axios.get(route('prospectsIndex'));
                 this.prospectList = response.data;
             } catch (error) {
-                console.log(error);
+                // console.error(error);
             }
         } 
     },

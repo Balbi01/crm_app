@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Prospect\ProspectController;
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -43,6 +44,9 @@ Route::get('/mailTest', function () {
     return 'Mail sent';
 });
 
+/**
+ * Rutas relacionadas a Prospectos
+ */
 // Carga de tabla principal de prospectos.
 Route::get('/prospects/index', [
     ProspectController::class,
@@ -55,5 +59,17 @@ Route::post('prospects/create', [
     'createProspect'
 ])->name('createProspect');
 
+/**
+ * Rutas relacionadas a Usuarios
+ */
+Route::get('/users/index', [
+    UserController::class,
+    'index'
+])->name('usersIndex');
+
+Route::post('/users/create', [
+    UserController::class,
+    'createUser'
+])->name('createUser');
 
 require __DIR__ . '/auth.php';
