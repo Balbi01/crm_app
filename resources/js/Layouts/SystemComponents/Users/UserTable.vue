@@ -31,10 +31,10 @@
                 <table class="table table-auto w-full">
                     <thead>
                         <tr>
-                            <th class="min-w-[450px]">No</th>
-                            <th class="min-w-[450px]">Nombre</th>
-                            <th class="min-w-[450px]">Correo</th>
-                            <th class="min-w-[450px]">RFC</th>
+                            <th>No</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>RFC</th>
                         </tr>
                     </thead>
                     <tbody>

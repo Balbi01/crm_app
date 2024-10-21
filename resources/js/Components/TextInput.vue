@@ -6,6 +6,15 @@ const model = defineModel({
     required: true,
 });
 
+defineProps(
+    {
+        inputType: {
+            type: String,
+            default: 'text',
+        },
+    }
+)
+
 const input = ref(null);
 
 onMounted(() => {
@@ -17,10 +26,16 @@ onMounted(() => {
 defineExpose({ focus: () => input.value.focus() });
 </script>
 
-<template>
+<template> 
     <input
-        class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
+        class="border-gray-300 
+            focus:border-indigo-500 
+            focus:ring-indigo-500 
+            rounded-md shadow-sm
+            input input-bordered w-full
+            "
         v-model="model"
         ref="input"
+        :type="inputType"
     />
 </template>
